@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77d7aaa3a62f64f4db0f877c37fb6e5a, type: 3}
+  m_Name: GoToBoss
+  m_EditorClassIdentifier: 
+  ID: 2
+  Title: Go to boss!
+  Description: Look for the boss. Your position relative to the boss location will
+    be measured to know how close you are.
+  TargetPosition: {x: 908, y: 1, z: 1650}
