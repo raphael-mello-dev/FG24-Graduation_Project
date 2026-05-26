@@ -78,7 +78,7 @@ public class Enemy : MonoBehaviour
             myTree.blackboard, SearchRange),
 
             new Sequence(new List<Node> {
-                new Await(myTree.blackboard, 0.1f),
+                new Await(myTree.blackboard, Random.Range(0.5f, 5f)),
                 new Patrol(myTree.blackboard)
             }, myTree.blackboard)
 
@@ -90,8 +90,8 @@ public class Enemy : MonoBehaviour
         myTree.root = new Selector(new List<Node> {
             new Hurtness(new Sequence(new List<Node> {
                 new MoveTowardsPlayer(myTree.blackboard, SearchRange),
-                new Attack(myTree.blackboard, groundCheck, GetComponent<Rigidbody>()),
-                new Await(myTree.blackboard, 2f)
+                new Await(myTree.blackboard, LevelDifficulty.GetAttackCooldown()),
+                new Attack(myTree.blackboard, groundCheck, GetComponent<Rigidbody>())
             }, myTree.blackboard),
 
         myTree.blackboard, SearchRange, Health),
@@ -110,8 +110,8 @@ public class Enemy : MonoBehaviour
             new PlayerSearch(
                 new Sequence(new List<Node> {
                     new MoveTowardsPlayer(myTree.blackboard, SearchRange),
+                    new Await(myTree.blackboard, LevelDifficulty.GetAttackCooldown()),
                     new Attack(myTree.blackboard, groundCheck, GetComponent<Rigidbody>()),
-                    new Await(myTree.blackboard, 12f)
                 }, myTree.blackboard),
 
             myTree.blackboard, SearchRange),

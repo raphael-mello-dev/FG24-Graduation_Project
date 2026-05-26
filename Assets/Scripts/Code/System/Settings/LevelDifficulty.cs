@@ -38,6 +38,11 @@ public class LevelDifficulty
         return level / (level + 3);
     }
 
+    public static float GetAttackCooldown()
+    {
+        return 5f - (float)GameSettings.Instance.Difficulty;
+    }
+
     public static int GetBossLevel()
     {
         float bossLevel = (GameSettings.Instance.Difficulty == GameDifficulty.Easy ? 1f : GameManager.Instance.Player.Stats.Level / 2 * ((int)GameSettings.Instance.Difficulty));
